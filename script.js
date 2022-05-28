@@ -66,7 +66,8 @@
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
         alert("Signup Successful :)");
-        document.getElementById("email-label").innerHTML = user;
+        console.log(user.user.email);
+        document.getElementById("registered-email").innerHTML = user.user.email + " is successfully registered.";
       })
       .catch((err) => {
         alert(err.message);
