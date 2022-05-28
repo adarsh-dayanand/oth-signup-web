@@ -20,20 +20,20 @@
     const btnSignup = document.getElementById("btnSignup");
 
     //Add Login Event
-    btnLogin.addEventListener('click', e => {
-        const email = txtEmail.value;
-        const password = txtPassword.value;
+    // btnLogin.addEventListener('click', e => {
+    //     const email = txtEmail.value;
+    //     const password = txtPassword.value;
 
-        const auth = firebase.auth();
+    //     const auth = firebase.auth();
 
-        //sign in with firebase auth
-        auth.signInWithEmailAndPassword(email, password).then(user =>{
-            alert("Login Successful :)");
-        }).catch(err => {
-            alert(err.message);
-        });
+    //     //sign in with firebase auth
+    //     auth.signInWithEmailAndPassword(email, password).then(user =>{
+    //         alert("Login Successful :)");
+    //     }).catch(err => {
+    //         alert(err.message);
+    //     });
         
-    });
+    // });
 
     //Add Signup Event
     btnSignup.addEventListener('click', e => {
