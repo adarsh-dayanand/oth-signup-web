@@ -4,7 +4,7 @@
 
   const txtEmail = document.getElementById("txtEmail");
   const txtPassword = document.getElementById("txtPassword");
-  const btnLogin = document.getElementById("btnLogin");
+  // const btnLogin = document.getElementById("btnLogin");
   const btnSignup = document.getElementById("btnSignup");
   const emailLabel = document.getElementById("email-label");
   const passwordLabel = document.getElementById("passowrd-label");
@@ -16,7 +16,7 @@
     divContainer = "none";
     txtEmail.style.display = "none";
     txtPassword.style.display = "none";
-    btnLogin.style.display = "none";
+    // btnLogin.style.display = "none";
     btnSignup.style.display = "none";
     emailLabel.style.display = "none";
     passwordLabel.style.display = "none";
