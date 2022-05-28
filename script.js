@@ -12,7 +12,7 @@
   if (person === "sa-oth") {
     divContainer = "block";
   } else {
-      alert('Invaid Auth')
+    alert("Invaid Auth");
     divContainer = "none";
     txtEmail.style.display = "none";
     txtPassword.style.display = "none";
@@ -60,17 +60,38 @@
     const password = txtPassword.value;
 
     const auth = firebase.auth();
+    const db = firebase.firestore();
 
     //sign in with firebase auth
-    const promise = auth
+    auth
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
         alert("Signup Successful :)");
-        console.log(user.user.email);
-        document.getElementById("registered-email").innerHTML = user.user.email + " is successfully registered.";
+
+        let numberOfUsers = 0;
+
+        db.collection('users').get().then(snap => {
+          numberOfUsers = snap.size 
+        });
+
+        db.collection("users")
+          .add({
+            email: user.user.email,
+            id: numberOfUsers + 1,
+            timer: ''
+          })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+        document.getElementById("registered-email").innerHTML =
+          user.user.email + " is successfully registered.";
       })
       .catch((err) => {
-        alert(err.message);
+        console.log(err);
+        document.getElementById("registered-email").innerHTML = err.message;
       });
   });
 })();
