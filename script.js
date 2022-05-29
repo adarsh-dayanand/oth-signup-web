@@ -34,6 +34,14 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  // const db = firebase.firestore();
+  // let numberOfUsers = 0;
+  // db.collection("users")
+  //   .get()
+  //   .then((snap) => {
+  //     numberOfUsers = snap.size + 1;
+  //   });
+  // console.log(numberOfUsers);
 
   //Get Elements
 
@@ -70,22 +78,25 @@
 
         let numberOfUsers = 0;
 
-        db.collection('users').get().then(snap => {
-          numberOfUsers = snap.size 
-        });
-
         db.collection("users")
-          .add({
-            email: user.user.email,
-            id: numberOfUsers + 1,
-            timer: ''
-          })
-          .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
+          .get()
+          .then((snap) => {
+            numberOfUsers = snap.size;
+
+            db.collection("users")
+              .add({
+                email: user.user.email,
+                id: numberOfUsers + 1,
+                timer: "",
+              })
+              .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+              })
+              .catch((error) => {
+                console.error("Error adding document: ", error);
+              });
           });
+
         document.getElementById("registered-email").innerHTML =
           user.user.email + " is successfully registered.";
       })
