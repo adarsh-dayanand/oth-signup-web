@@ -99,6 +99,7 @@
                 .set({
                   email: user.user.email,
                   id: numberOfUsers + 1,
+                  loginCount: 0,
                   timer: "",
                 })
                 .then((docRef) => {
