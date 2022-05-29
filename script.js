@@ -10,6 +10,7 @@
   const passwordLabel = document.getElementById("passowrd-label");
 
   if (person === "sa-oth") {
+    alert('Welcome');
     divContainer = "block";
   } else {
     alert("Invaid Auth");
@@ -74,7 +75,7 @@
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        alert("Signup Successful :)");
+        alert("Signup Successful :) ");
 
         let numberOfUsers = 0;
 
