@@ -84,7 +84,8 @@
             numberOfUsers = snap.size;
 
             db.collection("users")
-              .add({
+              .doc(user.user.email)
+              .set({
                 email: user.user.email,
                 id: numberOfUsers + 1,
                 timer: "",
