@@ -8,6 +8,7 @@
   const btnSignup = document.getElementById("btnSignup");
   const emailLabel = document.getElementById("email-label");
   const passwordLabel = document.getElementById("passowrd-label");
+  // const confPasswordLabel = document.getElementById("Confpassowrd-label");
   const messageSuccess = document.getElementById("message-success");
   const messageInfo = document.getElementById("message-info");
   const messageError = document.getElementById("message-error");
@@ -26,6 +27,7 @@
     btnSignup.style.display = "none";
     emailLabel.style.display = "none";
     passwordLabel.style.display = "none";
+    // confPasswordLabel.style.display = "none";
     messageSuccess.style.display = "none";
     messageInfo.style.display = "none";
     messageError.style.display = "none";

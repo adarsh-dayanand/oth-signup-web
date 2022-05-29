@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
@@ -29,61 +32,61 @@
     <title>OTH Signup</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
-  <body style="display: block;">
+  <body>
     <div id="container" class="container">
       <div class="row center">
-        <div class="form-group">
-          <label for="email" id="email-label">Email:</label>
-          <input
-            type="email"
-            class="form-control shadow-sm"
-            id="txtEmail"
-            name="email"
-            placeholder="Enter email"
-            style="width: 22rem"
-          />
+        <div class="col col-3"></div>
+        <div class="col col-6">
+          <div class="form-group">
+            <label for="email" id="email-label">Email:</label>
+            <input
+              type="email"
+              class="form-control shadow-sm"
+              id="txtEmail"
+              name="email"
+              placeholder="Enter email"
+              style="width: 22rem"
+            />
+          </div>
+          <div class="form-group">
+            <label for="pwd" id="passowrd-label">Password:</label>
+            <input
+              type="password"
+              class="form-control form-outline shadow-sm"
+              id="txtPassword"
+              name="password"
+              placeholder="Enter password"
+              style="width: 22rem"
+            />
+          </div>
+          <div class="form-group">
+            <label for="pwd" id="Confpassowrd-label">Confirm Password:</label>
+            <input
+              type="password"
+              class="form-control shadow-sm"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Enter password"
+              style="width: 22rem"
+            />
+          </div>
+          <div class="">
+            <button
+              type="submit"
+              style="width: 22rem"
+              class="btn btn-primary shadow"
+              id="btnSignup"
+            >
+              Signup
+            </button>
+          </div>
+          <div id="result">
+            <p class="alert alert-success" id="message-success"></p>
+            <p class="alert alert-info" id="message-info"></p>
+            <p class="alert alert-danger" id="message-error"></p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="pwd" id="passowrd-label">Password:</label>
-          <input
-            type="password"
-            class="form-control form-outline shadow-sm"
-            id="txtPassword"
-            name="password"
-            placeholder="Enter password"
-            style="width: 22rem"
-          />
-        </div>
-        <div class="form-group">
-          <label for="pwd" id="passowrd-label">Confirm Password:</label>
-          <input
-            type="password"
-            class="form-control shadow-sm"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Enter password"
-            style="width: 22rem"
-          />
-        </div>
-
-        <!-- <button type="submit" class="btn btn-primary shadow" id="btnLogin">
-          Login
-        </button> -->
-        <div class="">
-          <button
-            type="submit"
-            style="width: 22rem"
-            class="btn btn-primary shadow"
-            id="btnSignup"
-          >
-            Signup
-          </button>
-        </div>
-        <div id="result">
-          <p class="alert alert-success" id="message-success"></p>
-          <p class="alert alert-info" id="message-info"></p>
-          <p class="alert alert-danger" id="message-error"></p>
-        </div>
+        <div class="col col-3"></div>
       </div>
     </div>
     <script src="script.js"></script>
