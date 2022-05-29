@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
@@ -18,40 +18,71 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
     <title>OTH Signup</title>
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
-  <body>
-    <div id="container">
-      <div class="col-4 center">
+  <body style="display: block;">
+    <div id="container" class="container">
+      <div class="row center">
         <div class="form-group">
           <label for="email" id="email-label">Email:</label>
           <input
-            type="text"
+            type="email"
             class="form-control shadow-sm"
             id="txtEmail"
             name="email"
+            placeholder="Enter email"
+            style="width: 22rem"
           />
         </div>
         <div class="form-group">
           <label for="pwd" id="passowrd-label">Password:</label>
           <input
             type="password"
-            class="form-control shadow-sm"
+            class="form-control form-outline shadow-sm"
             id="txtPassword"
             name="password"
+            placeholder="Enter password"
+            style="width: 22rem"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pwd" id="passowrd-label">Confirm Password:</label>
+          <input
+            type="password"
+            class="form-control shadow-sm"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Enter password"
+            style="width: 22rem"
           />
         </div>
 
         <!-- <button type="submit" class="btn btn-primary shadow" id="btnLogin">
           Login
         </button> -->
-        <button type="submit" class="btn btn-primary shadow" id="btnSignup">
-          Signup
-        </button>
+        <div class="">
+          <button
+            type="submit"
+            style="width: 22rem"
+            class="btn btn-primary shadow"
+            id="btnSignup"
+          >
+            Signup
+          </button>
+        </div>
         <div id="result">
-          <p id="registered-email"></p>
+          <p class="alert alert-success" id="message-success"></p>
+          <p class="alert alert-info" id="message-info"></p>
+          <p class="alert alert-danger" id="message-error"></p>
         </div>
       </div>
     </div>
